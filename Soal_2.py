@@ -8,7 +8,7 @@ data = [
 ]
 
 # Buatkan array 2 dimensi
-array_2d = pd.DataFrame(data, columns=["Nama", "Matkul 1", "Matkul 2"])
+array_2d = pd.DataFrame(data, columns=["Nama", "Algoritma Struktur Data 2", "Matematika Numerik"])
 
 # Tampilkan rata-rata nilai untuk setiap mata kuliah
 rata_rata_matkul = array_2d.iloc[:, 1:].mean()
