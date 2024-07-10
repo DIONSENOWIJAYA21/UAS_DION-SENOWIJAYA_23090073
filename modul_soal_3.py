@@ -1,12 +1,12 @@
-from Antrian import Antrian
+from Soal_3 import Antrian
 
 # Buat antrian baru
 antrian = Antrian()
 
 # Tambahkan beberapa pesanan ke antrian
-antrian.enqueue("Pesanan 1")
-antrian.enqueue("Pesanan 2")
-antrian.enqueue("Pesanan 3")
+antrian.enqueue("Mie ayam")
+antrian.enqueue("Bakso")
+antrian.enqueue("Seblak")
 
 print("Antrian:", antrian)  # Output: Antrian: ['Pesanan 1', 'Pesanan 2', 'Pesanan 3']
 
