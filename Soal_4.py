@@ -1,28 +1,38 @@
 class Buah:
-    def __init__(self, nama, warna, rasa):
+    def _init_(self, nama, warna, rasa):
         self.nama = nama
         self.warna = warna
         self.rasa = rasa
-    
-    def deskripsi(self):
-        return f"{self.nama} {self.warna} dengan {self.rasa} "
 
-# Definisikan kelas anak yang mewarisi dari Kendaraan
-class Buah(Mangga):
-    def __init__(self, nama, warna, rasa):
+    def set_nama(self, nama):
+        self.nama = nama
 
-    def deskripsi(self):
-        return f"{self.merk} {self.tahun} dengan {self.jarak_tempuh} kilometer dan {self.jumlah_pintu} pintu"
+    def set_warna(self, warna):
+        self.warna = warna
 
-# Buat instance dari kelas Mobil
-mobilku = Mobil("Toyota", 2020, 4)
+    def set_rasa(self, rasa):
+        self.rasa = rasa
 
-# Panggil atribut dan metode dari kelas Mobil
-print(mobilku.merk)  # Output: Toyota
-print(mobilku.tahun)  # Output: 2020
-print(mobilku.jumlah_pintu)  # Output: 4
+    def information(self):
+        return f"Nama: {self.nama}, Warna: {self.warna}, Rasa: {self.rasa}"
 
-mobilku.berkendara(100)
-print(mobilku.jarak_tempuh)  # Output: 100
+class Mangga(Buah):
+    def _init_(self, nama, warna, rasa, vitamin):
+        super()._init_(nama, warna, rasa)
+        self.vitamin = vitamin
 
-print(mobilku.deskripsi())  # Output: Toyota 2020 dengan 100 kilometer dan 4 pintu
+    def set_vitamin(self, vitamin):
+        self.vitamin = vitamin
+
+    def information(self):
+        return f"{super().information()}, Vitamin: {self.vitamin}"
+
+mangga = Mangga("Mangga", "Kuning", "Manis", "Vitamin C")
+
+print(mangga.information())
+
+mangga.set_nama("Mangga Matang")
+mangga.set_warna("Kuning")
+mangga.set_rasa("Manis")
+mangga.set_vitamin("Vitamin A")
+print(mangga.information())
